@@ -1,4 +1,4 @@
-|- restphpmysqli       - directory principale di progetto
+|- restphpmysqli       - directory principale di progetto  
 |--- Test.txt          - comandi per verificare i vari medoti CRUD del servizio REST 
 |--- mediateca.sql     - sql per il database di test 
 |--- config/  
