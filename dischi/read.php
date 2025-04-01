@@ -1,6 +1,13 @@
 <?php
 // Access-Control-Allow-Headers
-include_once '../config/header.php';
+// Headers
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: GET");
+header("Access-Control-Max-Age: 3600");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
+
 include_once '../config/database.php';
 
 // Controllo della connessione
@@ -15,16 +22,25 @@ $result = $conn->query($query);
 
 // Controllo del risultato della query
 if ($result && $result->num_rows > 0) { 
-    // Creazione diretta dell'array dei record
-    $arr_dischi = ["records" => $result->fetch_all(MYSQLI_ASSOC)];
-//oppure $arr_dischi = array("records" => $array_dei_dischi);
-
+    // Iterazione sui risultati e creazione diretta dell'array
+    $arr_dischi = ["records" => []];
+    while ($row = $result->fetch_assoc()) {
+        //Il metodo fetch_assoc()   restituisce un array associativo
+        //se dovessi fare una stampa dovrei fare in questo modo echo "Titolo: " . $row["Titolo"]
+        //A Noi invece serve un array associativo in cui le chiavi sono i nomi delle colonne
+        //e i valori sono i dati delle righe ma fatto da diverse righe
+        //Questo array associativo e' appunto array dischi
+        $arr_dischi["records"][] = $row;
+    }
+    //Converoto poi array dischi in formato JSON con json_encode
+    //e lo restituisco come risposta
     echo json_encode($arr_dischi);
 } else {
     echo json_encode(["message" => "Nessun disco trovato."]);
 }
 
 // Chiudo la connessione
+$result->free(); 
 $conn->close();
 ?>
 
