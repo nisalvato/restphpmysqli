@@ -23,10 +23,8 @@ if (!empty($data->NRcatalogo) && !empty($data->Titolo) && !empty($data->Genere) 
     if (mysqli_query($conn, $query)) {
         http_response_code(201); // Creazione completata
         echo json_encode(array("message" => "Disco creato correttamente."));
-    } else {
-        http_response_code(503); // Servizio non disponibile
-        echo json_encode(array("message" => "Impossibile creare il disco."));
-    }
+    }//Qui andrebbe fatto un else per inviare il messaggio in caso di query errata
+
 } else {
     http_response_code(400); // Richiesta errata
     echo json_encode(array("message" => "Impossibile creare il disco, i dati sono incompleti."));
