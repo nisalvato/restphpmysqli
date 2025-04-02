@@ -1,13 +1,15 @@
 
 Comandi per testare i servizi REST
 
-GET
+GET (viene letta la lista dei dischi)
 Nel browser digitare:
 https://11.2.3.38/profVai/restphpmysqli/dischi/read.php
 
-POST
+POST (viene creato un disco)
 Comando da dare al terminale per testare il post
 curl -X POST -H "Content-Type: application/json" -d '{"NRcatalogo":"12345","Genere":"Rock","Interprete":"Queen","Titolo":"Bohemian Rhapsody","Etichetta":"EMI"}' http://11.2.3.38/profVai/restphpmysqli/dischi/create.php
 
-DELETE
+DELETE (viene cancellato un disco)
 curl -X DELETE -H "Content-Type: application/json" -d '{"NRcatalogo":"12345"}' http://11.2.3.38/profVai/restphpmysqli/dischi/delete.php
+
+UPDATE (to do)
