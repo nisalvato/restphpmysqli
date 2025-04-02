@@ -7,4 +7,5 @@
 |--- dischi/   
 |------ create.php       - crea un disco sul database  
 |------ read.php         - legge un libro dal database  
-|------ delete.php       - aggiorna un libro sul database  
+|------ delete.php       - cancella un libro sul database  
+|------ update.php       - aggiorna un libro sul database  
