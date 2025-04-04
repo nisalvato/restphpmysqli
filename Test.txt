@@ -12,4 +12,11 @@ curl -X POST -H "Content-Type: application/json" -d '{"NRcatalogo":"12345","Gene
 DELETE (viene cancellato un disco)
 curl -X DELETE -H "Content-Type: application/json" -d '{"NRcatalogo":"12345"}' http://11.2.3.38/profVai/restphpmysqli/dischi/delete.php
 
-UPDATE (to do)
+UPDATE (fa update di un dato nel DB)
+curl -X PUT -H "Content-Type: application/json" -d '{
+  "NRcatalogo": "12345",
+  "Titolo": "Updated Title",
+  "Genere": "Updated Genre",
+  "Interprete": "Updated Artist",
+  "Etichetta": "Updated Label"
+}' http://11.2.3.38/profVai/restphpmysqli/dischi/update.php
