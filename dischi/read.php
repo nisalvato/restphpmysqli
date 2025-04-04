@@ -2,13 +2,13 @@
 // Access-Control-Allow-Headers
 // Headers
 include_once '../config/headers.php'; //mi connetto al database
-header("Access-Control-Allow-Methods: GET");//nota il metodo POST
+header("Access-Control-Allow-Methods: GET");//nota il metodo GET
 
 include_once '../config/database.php';
 
 // Controllo della connessione
 if ($conn->connect_errno) {
-    echo "Impossibile connettersi al server: " . $conn->connect_error . "\n";
+    echo json_encode(["message" => "Impossibile connettersi al server: " . $conn->connect_error]);
     exit;
 }
 

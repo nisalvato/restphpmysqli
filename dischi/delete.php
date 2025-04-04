@@ -1,7 +1,7 @@
 <?php
 // Headers
-include_once '../config/headers.php'; //mi connetto al database
-header("Access-Control-Allow-Methods: DELETE");//nota il metodo POST
+include_once '../config/headers.php';
+header("Access-Control-Allow-Methods: DELETE"); // Metodo DELETE
 
 include_once '../config/database.php';
 
@@ -16,6 +16,7 @@ $data = json_decode(file_get_contents("php://input"));
 
 // Controllo che l'ID sia stato fornito
 if (!isset($data->NRcatalogo)) {
+    http_response_code(400); // Richiesta errata
     echo json_encode(["message" => "ID mancante."]);
     exit;
 }
@@ -24,17 +25,16 @@ if (!isset($data->NRcatalogo)) {
 $query = "DELETE FROM dischi WHERE NRcatalogo = '$data->NRcatalogo'";
 
 // Esecuzione della query
-if (mysqli_query($conn, $query)) {
+if ($conn->query($query)) {
     // Controllo se è stato eliminato un record
-    if (mysqli_affected_rows($conn) > 0) {
+    if ($conn->affected_rows > 0) {
+        http_response_code(200); // OK
         echo json_encode(["message" => "Disco eliminato con successo."]);
     } else {
+        http_response_code(404); // Non trovato
         echo json_encode(["message" => "Nessun disco trovato con l'ID fornito."]);
     }
-} else {
-    echo json_encode(["message" => "Errore durante l'eliminazione del disco: " . $conn->error]);
-}
-
+}//Non controllo se ci sono errori di sintassi nella query
 // Chiudo la connessione
 $conn->close();
 ?>
