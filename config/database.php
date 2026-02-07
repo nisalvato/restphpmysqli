@@ -1,9 +1,9 @@
 <?php
 // Attributi del database: credenziali
-$host = "11.2.3.38";
-$db_name = "provarest";
-$username = "provarest";
-$password = "temporanea1";
+$host = '172.17.0.3';
+$username = 'maria';
+$password = 'maria';
+$db_name = 'restdb';
 
 // Connessione al server
 $conn = new mysqli($host, $username, $password, $db_name);

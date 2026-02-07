@@ -66,21 +66,7 @@ CREATE TABLE `film` (
   `incasso` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
 
---
--- Struttura della tabella `generi`
---
--- Si è verificato un errore durante la lettura della struttura della tabella mediateca.generi: #1932 - Table 'mediateca.generi' doesn't exist in engine
--- Si è verificato un errore durante la lettura dei dati della tabella mediateca.generi: #1064 - Errore di sintassi nella query SQL vicino a 'FROM `mediateca`.`generi`' linea 1
-
---
--- Indici per le tabelle scaricate
---
-
---
--- Indici per le tabelle `dischi`
---
 ALTER TABLE `dischi`
   ADD PRIMARY KEY (`NRcatalogo`);
 
@@ -91,6 +77,4 @@ ALTER TABLE `film`
   ADD PRIMARY KEY (`ID_film`);
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

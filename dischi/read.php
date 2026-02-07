@@ -1,8 +1,7 @@
 <?php
-// Access-Control-Allow-Headers
-// Headers
-include_once '../config/headers.php'; //mi connetto al database
-header("Access-Control-Allow-Methods: GET");//nota il metodo GET
+//Restituisce il formato JSON
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: GET");//permette solo il metodo GET
 
 include_once '../config/database.php';
 
