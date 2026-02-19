@@ -1,6 +1,6 @@
 <?php
-// Headers
-include_once '../config/headers.php';
+//Restituisce il formato JSON
+header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: DELETE"); // Metodo DELETE
 
 include_once '../config/database.php';

@@ -50,7 +50,7 @@ INSERT INTO `dischi` (`NRcatalogo`, `titolo`, `interprete`, `genere`, `etichetta
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `film`
+-- Struttura della tabella `film` creata per scopi futuri
 --
 
 CREATE TABLE `film` (
@@ -66,21 +66,20 @@ CREATE TABLE `film` (
   `incasso` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
 
---
--- Struttura della tabella `generi`
---
--- Si è verificato un errore durante la lettura della struttura della tabella mediateca.generi: #1932 - Table 'mediateca.generi' doesn't exist in engine
--- Si è verificato un errore durante la lettura dei dati della tabella mediateca.generi: #1064 - Errore di sintassi nella query SQL vicino a 'FROM `mediateca`.`generi`' linea 1
+NSERT INTO film (ID_film, titolo, sceneggiatore, produttore, nazione, durata, genere, anno, costo, incasso) VALUES
+(1, 'Il Padrino', 'Mario Puzo', 'Albert S. Ruddy', 'USA', '175', 'Drammatico', '1972-03-24', 6000000, 250000000),
+(2, 'Pulp Fiction', 'Quentin Tarantino', 'Lawrence Bender', 'USA', '154', 'Thriller', '1994-10-14', 8000000, 213900000),
+(3, 'Inception', 'Christopher Nolan', 'Emma Thomas', 'USA', '148', 'Fantascienza', '2010-07-16', 160000000, 829895144),
+(4, 'La vita è bella', 'Roberto Benigni', 'Gianluigi Braschi', 'Italia', '116', 'Drammatico', '1997-12-20', 20000000, 230098753),
+(5, 'Titanic', 'James Cameron', 'Jon Landau', 'USA', '195', 'Romantico', '1997-12-19', 200000000, 2187463944),
+(6, 'Il Gladiatore', 'David Franzoni', 'Douglas Wick', 'USA', '155', 'Storico', '2000-05-05', 103000000, 460583960),
+(7, 'Matrix', 'Wachowski', 'Joel Silver', 'USA', '136', 'Fantascienza', '1999-03-31', 63000000, 463517383),
+(8, 'Forrest Gump', 'Eric Roth', 'Wendy Finerman', 'USA', '142', 'Drammatico', '1994-07-06', 55000000, 678200000),
+(9, 'Il Signore degli Anelli', 'Peter Jackson', 'Barrie M. Osborne', 'Nuova Zelanda', '178', 'Fantasy', '2001-12-19', 93000000, 871530324),
+(10, 'Avatar', 'James Cameron', 'Jon Landau', 'USA', '162', 'Fantascienza', '2009-12-18', 237000000, 2923706026);
 
---
--- Indici per le tabelle scaricate
---
 
---
--- Indici per le tabelle `dischi`
---
 ALTER TABLE `dischi`
   ADD PRIMARY KEY (`NRcatalogo`);
 
@@ -91,6 +90,4 @@ ALTER TABLE `film`
   ADD PRIMARY KEY (`ID_film`);
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

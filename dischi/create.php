@@ -1,7 +1,7 @@
 <?php
-// Access-Control-Allow-Headers
 
-include_once '../config/headers.php'; //mi connetto al database
+//Restituisce il formato JSON
+header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");//nota il metodo POST
 
 include_once '../config/database.php'; //mi connetto al database

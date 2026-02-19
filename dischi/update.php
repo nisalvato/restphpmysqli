@@ -1,8 +1,7 @@
 <?php
-// filepath: /home/plutone/Documents/visualstudio/restphpmysqli/dischi/update.php
 
-// Inclusione degli headers e della connessione al database
-include_once '../config/headers.php'; // Mi connetto al database
+//Restituisce il formato JSON
+header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: PUT"); // Metodo PUT
 
 include_once '../config/database.php';
