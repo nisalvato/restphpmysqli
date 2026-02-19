@@ -19,4 +19,4 @@ curl -X PUT -H "Content-Type: application/json" -d '{
   "Genere": "Updated Genre",
   "Interprete": "Updated Artist",
   "Etichetta": "Updated Label"
-}' http://11.2.3.38/profVai/restphpmysqli/dischi/update.php
+}' http://11.2.3.38/profVai/restphpmysqli/dischi/update.phpAggiornamento forzato
